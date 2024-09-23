@@ -1,6 +1,6 @@
 # Kombo
 
-**KOM**ga + Ko**bo**
+**Kom**ga + Ko**bo**
 
 ## What is this?
 
