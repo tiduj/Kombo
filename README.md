@@ -12,7 +12,7 @@ A docker container that monitors your Komga comics / manga / ebooks library and 
 
 1. I have mylar3 snatching my comics which puts them in my main Comics library
 2. I then have Komga hosting my Comics for me to read. I have historically read my comics over OPDS on my iPad using Panels but I just got a Kobo Libra Colour :D
-3. I want to use the native Kobo Sync feature that Komga uses
+3. I want to use the native Kobo Sync feature that Komga uses as OPDS through Koreader does not support syncing of reading progress
 
 This is where the catch is; Kobo Sync with Komga only works on _epubs_. Comics are commonly found in CBZ/CBR formats.
 
