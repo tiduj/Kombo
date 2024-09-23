@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  kombo:
+    container_name: kombo
+    image: soda3x/kombo:latest
+    environment:
+      - PROFILE=KoLC  # E-reader profile here (see https://github.com/ciromattia/kcc?tab=readme-ov-file#profiles)
+      - FORMAT=EPUB   # Output format here
+    volumes:
+      - <your-incoming-books>:/input                  # Books in
+      - <where-your-converted-books-will-go>:/output  # Books out
+      - ./config:/config                              # Working files, required for it to function correctly
+    restart: always
