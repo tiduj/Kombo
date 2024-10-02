@@ -7,6 +7,10 @@ services:
     environment:
       - PROFILE=KoLC  # E-reader profile here (see https://github.com/ciromattia/kcc?tab=readme-ov-file#profiles)
       - FORMAT=EPUB   # Output format here
+
+      - NO_KEPUB=false # Set to true if you want a '.epub extension', false will give '.kepub.epub' extension
+                       # You may need to set this to true if you're using something like Komga which uses 
+                       # Kepubify by default (which will handle the conversion to kepub for you)
     volumes:
       - <your-incoming-books>:/input                  # Books in
       - <where-your-converted-books-will-go>:/output  # Books out

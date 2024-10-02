@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y inotify-tools git \
 
 WORKDIR /usr/src/kombo
 
-RUN git clone https://github.com/ciromattia/kcc.git
+RUN git clone https://github.com/soda3x/kcc.git
 
 RUN pip install --no-cache-dir -r kcc/requirements.txt
 

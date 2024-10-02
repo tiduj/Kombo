@@ -4,6 +4,7 @@
 INPUT_DIR="/input"
 OUTPUT_DIR="/output"
 NEW_EXTENSION="${FORMAT:-.epub}"
+NO_KEPUB="${NO_KEPUB:false}"
 
 # File to keep track of processed files
 PROCESSED_FILES_LOG="/config/processed_files.log"
@@ -24,8 +25,8 @@ process_file() {
       # Create the corresponding output directory structure
       mkdir -p "$(dirname "$OUTPUT_FILE")"
 
-      echo "With the following: $INPUT_FILE --forcecolor --profile $PROFILE --output $(dirname "$OUTPUT_FILE")"
-      python3 kcc/kcc-c2e.py "$INPUT_FILE" --forcecolor --profile "$PROFILE" --output "$(dirname "$OUTPUT_FILE")"
+      echo "Using the following parameters: $INPUT_FILE ${NO_KEPUB:+--nokepub} --forcecolor --profile $PROFILE  --output $(dirname "$OUTPUT_FILE")"
+      python3 kcc/kcc-c2e.py "$INPUT_FILE" ${NO_KEPUB:+--nokepub} --forcecolor --profile "$PROFILE" --output "$(dirname "$OUTPUT_FILE")"
       # Log the processed input file
       echo "$INPUT_FILE" >>"$PROCESSED_FILES_LOG"
     else
