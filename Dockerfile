@@ -4,6 +4,8 @@ FROM python:3.10-slim
 RUN apt-get update && apt-get install -y inotify-tools git \
     && apt-get install -y python3 p7zip-full python3-pil python3-psutil python3-slugify
 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y p7zip-full
+
 WORKDIR /usr/src/kombo
 
 RUN git clone https://github.com/soda3x/kcc.git
